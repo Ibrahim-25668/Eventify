@@ -1,0 +1,10 @@
+header{
+    background-color: #1E41F1;
+}
+
+footer {
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   display: inline;
+ }
