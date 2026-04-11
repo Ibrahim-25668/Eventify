@@ -51,6 +51,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   bottom: 10px;
 }
+
 #scroll_top:hover {
   background-color: black;
 }
