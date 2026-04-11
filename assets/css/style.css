@@ -3,7 +3,12 @@ header {
   position: relative;
 }
 
+header>nav {
+  background-color: #091135;
+}
+
 footer {
+  background-color: #091135;
   position: fixed;
   bottom: 0;
   width: 100%;
