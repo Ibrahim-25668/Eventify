@@ -12,11 +12,12 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <title>Eventify</title>
   <style>
-      .search-bar {
+    .search-bar {
       max-width: 300px;
       margin: 20px auto;
     }
-       #filter_options {
+
+    #filter_options {
       max-width: 400px;
       margin: 0 auto;
       padding: 15px;
@@ -69,16 +70,16 @@
   <!-- Header End -->
 
   <!-- Main Start -->
-   <main class="container-fluid my-4">
+  <main class="container-fluid my-4">
 
 
-     <form class="d-flex search-bar">
-        <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليت" aria-label="Search">
-        <button class="btn btn-outline-success me-2" type="submit">بحث</button>
-      </form>
+    <form class="d-flex search-bar">
+      <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليتك" aria-label="Search">
+      <button class="btn btn-secondary me-2" type="submit">بحث</button>
+    </form>
 
     <div class="text-center mb-3">
-      <button id="filter_toggle" class="btn btn-outline-primary">
+      <button id="filter_toggle" class="btn btn-primary">
         فلترة
       </button>
     </div>
@@ -123,7 +124,7 @@
     </div>
 
 
-   </main>
+  </main>
   <!-- Main End -->
 
   <!-- Footer Start -->
@@ -144,7 +145,7 @@
     crossorigin="anonymous"></script>
   <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
       const search_input = document.getElementById("search_input");
       const searchBtn = document.querySelector(".search-bar button");
       const cards_wrapper = document.getElementById("cards_wrapper");
@@ -228,7 +229,7 @@
 
       renderCards(all_cards);
     });
-    
+
   </script>
 </body>
 
