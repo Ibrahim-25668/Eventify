@@ -16,7 +16,7 @@
       max-width: 300px;
       margin: 20px auto;
     }
-       .filter-panel {
+       #filter_options {
       max-width: 400px;
       margin: 0 auto;
       padding: 15px;
@@ -73,44 +73,24 @@
 
 
      <form class="d-flex search-bar">
-        <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليتك" aria-label="Search">
+        <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليت" aria-label="Search">
         <button class="btn btn-outline-success me-2" type="submit">بحث</button>
       </form>
 
     <div class="text-center mb-3">
-      <button id="filter_date_btn" class="btn btn-outline-primary me-2">
-        فلترة بالتاريخ
-      </button>
-      <button id="filter_type_btn" class="btn btn-outline-primary me-2">
-        فلترة بالنوع
-      </button>
-      <button id="filter_place_btn" class="btn btn-outline-primary">
-        فلترة بالمكان
+      <button id="filter_toggle" class="btn btn-outline-primary">
+        فلترة
       </button>
     </div>
 
-    <div id="filter_date_options" class="filter-panel d-none text-center mb-3">
+    <div id="filter_options" class="d-none text-center">
+
       <div class="mb-3">
         <label class="form-label">التاريخ (من - إلى)</label>
         <input type="date" id="date_to" class="form-control">
         <input type="date" id="date_from" class="form-control mb-2">
       </div>
-    </div>
 
-    <div id="filter_type_options" class="filter-panel d-none text-center mb-3">
-      <div class="mb-3">
-        <label class="form-label">النوع</label>
-        <select id="type_filter" class="form-select">
-          <option value="all">الكل</option>
-          <option value="sport">رياضة</option>
-          <option value="cultural">ثقافة</option>
-          <option value="art">فن</option>
-          <option value="family">عائلي</option>
-        </select>
-      </div>
-    </div>
-
-    <div id="filter_place_options" class="filter-panel d-none text-center mb-3">
       <div class="mb-3">
         <label class="form-label">المكان</label>
         <select id="place_filter" class="form-select">
@@ -127,6 +107,17 @@
           <option value="السويداء">السويداء</option>
           <option value="حمص">حمص</option>
           <option value="حماه">حماه</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">النوع</label>
+        <select id="type_filter" class="form-select">
+          <option value="all">الكل</option>
+          <option value="sport">رياضة</option>
+          <option value="cultural">ثقافة</option>
+          <option value="art">فن</option>
+          <option value="family">عائلي</option>
         </select>
       </div>
     </div>
@@ -159,32 +150,15 @@
       const cards_wrapper = document.getElementById("cards_wrapper");
       const all_cards = Array.from(document.querySelectorAll(".card"));
 
-      const filterDateBtn = document.getElementById("filter_date_btn");
-      const filterTypeBtn = document.getElementById("filter_type_btn");
-      const filterPlaceBtn = document.getElementById("filter_place_btn");
-
-      const filterDateOptions = document.getElementById("filter_date_options");
-      const filterTypeOptions = document.getElementById("filter_type_options");
-      const filterPlaceOptions = document.getElementById("filter_place_options");
+      const filter_toggle = document.getElementById("filter_toggle");
+      const filter_options = document.getElementById("filter_options");
       const date_from = document.getElementById("date_from");
       const date_to = document.getElementById("date_to");
       const place_filter = document.getElementById("place_filter");
       const type_filter = document.getElementById("type_filter");
 
-      function togglePanel(panel) {
-        panel.classList.toggle("d-none");
-      }
-
-      filterDateBtn.addEventListener("click", () => {
-        togglePanel(filterDateOptions);
-      });
-
-      filterTypeBtn.addEventListener("click", () => {
-        togglePanel(filterTypeOptions);
-      });
-
-      filterPlaceBtn.addEventListener("click", () => {
-        togglePanel(filterPlaceOptions);
+      filter_toggle.addEventListener("click", () => {
+        filter_options.classList.toggle("d-none");
       });
 
       function applyFilters() {
