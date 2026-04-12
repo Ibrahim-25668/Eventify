@@ -24,9 +24,12 @@ footer {
   scroll-snap-align: start;
   position: relative;
 }
-
+body>main{
+  background-color: #E0E0FB;
+}
 main {
   padding-bottom: 1px;
+  
 }
 
 .badge-new {
