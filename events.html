@@ -11,7 +11,20 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <title>Eventify</title>
-  <style></style>
+  <style>
+      .search-bar {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+       .filter-panel {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+  </style>
 </head>
 
 <body>
@@ -56,6 +69,70 @@
   <!-- Header End -->
 
   <!-- Main Start -->
+   <main class="container-fluid my-4">
+
+
+     <form class="d-flex search-bar">
+        <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليتك" aria-label="Search">
+        <button class="btn btn-outline-success me-2" type="submit">بحث</button>
+      </form>
+
+    <div class="text-center mb-3">
+      <button id="filter_date_btn" class="btn btn-outline-primary me-2">
+        فلترة بالتاريخ
+      </button>
+      <button id="filter_type_btn" class="btn btn-outline-primary me-2">
+        فلترة بالنوع
+      </button>
+      <button id="filter_place_btn" class="btn btn-outline-primary">
+        فلترة بالمكان
+      </button>
+    </div>
+
+    <div id="filter_date_options" class="filter-panel d-none text-center mb-3">
+      <div class="mb-3">
+        <label class="form-label">التاريخ (من - إلى)</label>
+        <input type="date" id="date_to" class="form-control">
+        <input type="date" id="date_from" class="form-control mb-2">
+      </div>
+    </div>
+
+    <div id="filter_type_options" class="filter-panel d-none text-center mb-3">
+      <div class="mb-3">
+        <label class="form-label">النوع</label>
+        <select id="type_filter" class="form-select">
+          <option value="all">الكل</option>
+          <option value="sport">رياضة</option>
+          <option value="cultural">ثقافة</option>
+          <option value="art">فن</option>
+          <option value="family">عائلي</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="filter_place_options" class="filter-panel d-none text-center mb-3">
+      <div class="mb-3">
+        <label class="form-label">المكان</label>
+        <select id="place_filter" class="form-select">
+          <option value="all">الكل</option>
+          <option value="دمشق">دمشق</option>
+          <option value="حلب">حلب</option>
+          <option value="اللاذقية">اللاذقية</option>
+          <option value="الحسكة">الحسكة</option>
+          <option value="دير الزور">دير الزور</option>
+          <option value="القنيطرة">القنيطرة</option>
+          <option value="درعا">درعا</option>
+          <option value="طرطوس">طرطوس</option>
+          <option value="ادلب">ادلب</option>
+          <option value="السويداء">السويداء</option>
+          <option value="حمص">حمص</option>
+          <option value="حماه">حماه</option>
+        </select>
+      </div>
+    </div>
+
+
+   </main>
   <!-- Main End -->
 
   <!-- Footer Start -->
@@ -74,7 +151,111 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script></script>
+  <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+      const search_input = document.getElementById("search_input");
+      const searchBtn = document.querySelector(".search-bar button");
+      const cards_wrapper = document.getElementById("cards_wrapper");
+      const all_cards = Array.from(document.querySelectorAll(".card"));
+
+      const filterDateBtn = document.getElementById("filter_date_btn");
+      const filterTypeBtn = document.getElementById("filter_type_btn");
+      const filterPlaceBtn = document.getElementById("filter_place_btn");
+
+      const filterDateOptions = document.getElementById("filter_date_options");
+      const filterTypeOptions = document.getElementById("filter_type_options");
+      const filterPlaceOptions = document.getElementById("filter_place_options");
+      const date_from = document.getElementById("date_from");
+      const date_to = document.getElementById("date_to");
+      const place_filter = document.getElementById("place_filter");
+      const type_filter = document.getElementById("type_filter");
+
+      function togglePanel(panel) {
+        panel.classList.toggle("d-none");
+      }
+
+      filterDateBtn.addEventListener("click", () => {
+        togglePanel(filterDateOptions);
+      });
+
+      filterTypeBtn.addEventListener("click", () => {
+        togglePanel(filterTypeOptions);
+      });
+
+      filterPlaceBtn.addEventListener("click", () => {
+        togglePanel(filterPlaceOptions);
+      });
+
+      function applyFilters() {
+        const q = (search_input.value || "").trim().toLowerCase();
+        const from = date_from.value ? new Date(date_from.value) : null;
+        const to = date_to.value ? new Date(date_to.value) : null;
+        const place = place_filter.value;
+        const type = type_filter.value;
+
+        const filtered = all_cards.filter(card => {
+          const title_element = card.querySelector(".card-title");
+          const title = title_element ? title_element.innerText.toLowerCase() : "";
+          const text = card.innerText.toLowerCase();
+
+          const match_search = (!q || title.includes(q));
+          const match_place = (place === "all" || text.includes(place.toLowerCase()));
+          const match_type = (type === "all" || card.dataset.category.split(" ").includes(type));
+
+          let match_date = true;
+          const date_match = text.match(/\d{1,2}\/\d{1,2}\/\d{4}/);
+          if (date_match) {
+            const card_date = new Date(date_match[0].split("/").reverse().join("-"));
+            if (from && card_date < from) match_date = false;
+            if (to && card_date > to) match_date = false;
+          }
+
+          return match_search && match_place && match_type && match_date;
+        });
+
+        renderCards(filtered);
+      }
+
+      function renderCards(cards) {
+        cards_wrapper.innerHTML = "";
+
+        if (cards.length === 0) {
+          cards_wrapper.innerHTML = `
+          <div class="alert alert-warning text-center my-4" role="alert">
+             لا توجد فعاليات مطابقة لخيارات البحث الحالية.
+          </div>`;
+          return;
+        }
+
+        let slider = null;
+        cards.forEach((card, index) => {
+          if (index % 4 === 0) {
+            slider = document.createElement("div");
+            slider.className = "slid-container d-flex overflow-auto gap-2 p-1 mb-3";
+            cards_wrapper.appendChild(slider);
+          }
+          slider.appendChild(card);
+          card.style.display = "inline-flex";
+        });
+
+        const allSliders = cards_wrapper.querySelectorAll(".slid-container");
+        allSliders.forEach(slid => {
+          slid.style.overflowX = "auto";
+          slid.style.scrollbarWidth = "thin";
+        });
+      }
+
+      [search_input, date_from, date_to, place_filter, type_filter].forEach(el => {
+        el.addEventListener("input", applyFilters);
+        el.addEventListener("change", applyFilters);
+      });
+      searchBtn.addEventListener("click", applyFilters);
+
+      renderCards(all_cards);
+    });
+    
+  </script>
 </body>
 
 </html>
