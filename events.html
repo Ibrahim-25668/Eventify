@@ -72,11 +72,12 @@
   <!-- Main Start -->
   <main class="container-fluid mb-5">
 
+    <!-- search bar and filter buuton -->
+
     <div>
       <form class="d-flex search-bar">
         <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليتك" aria-label="Search"
           style="border-radius: 45px;">
-        <button class="btn btn-secondary me-2" type="submit" style="border-radius: 45px;">بحث</button>
       </form>
 
       <div class="text-center mb-3">
@@ -123,223 +124,163 @@
           </select>
         </div>
       </div>
+
     </div>
 
-    <!-- Session 1 -->
+    <div id="cards_wrapper">
 
-    <session class="slid-container d-flex overflow-auto p-1 my-3">
+      <!-- section 1 -->
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family cultural">
+          <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">family</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art">
+          <img src="assets/img/art/art1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">art</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport">
+          <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">sport</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family">
+          <img src="assets/img/family/family2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">family</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-    </session>
-
-    <!-- Session 2 -->
-
-    <session class="slid-container d-flex overflow-auto p-1 my-3">
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+          data-category="sport cultural">
+          <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">sport</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+      </section>
+
+      <!-- section 2 -->
+
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport">
+          <img src="assets/img/sport/sport3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">sport</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art">
+          <img src="assets/img/art/art2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">art</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural sport family">
+          <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">cultural</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-    </session>
-
-    <!-- Session 3 -->
-
-    <session class="slid-container d-flex overflow-auto p-1 my-3">
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family">
+          <img src="assets/img/family/family3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">family</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural">
+          <img src="assets/img/cultural/cultural3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">cultural</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+      </section>
+
+      <!-- section 3 -->
+
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural">
+          <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">cultural</h5>
+            <p class="card-text">Categories</p>
+            <p>place</p>
+            <p>date</p>
+            <p>more info</p>
+            <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
         </div>
-      </div>
 
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
-        </div>
-      </div>
+      </section>
 
-    </session>
-
-    <!-- Session 4 -->
-
-    <session class="slid-container d-flex overflow-auto p-1">
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
-        </div>
-      </div>
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
-        </div>
-      </div>
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
-        </div>
-      </div>
-
-      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex">
-        <img src="assets/img/logo.png" class="card-img-top" alt="Eventify" />
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Name</h5>
-          <p class="card-text">Categories</p>
-          <p>place</p>
-          <p>date</p>
-          <p>more info</p>
-          <a href="#" class="btn btn-outline-primary mt-auto">التفاصيل</a>
-        </div>
-      </div>
-
-    </session>
+    </div>
 
   </main>
   <!-- Main End -->
@@ -363,6 +304,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -425,7 +367,7 @@
 
         let slider = null;
         cards.forEach((card, index) => {
-          if (index % 4 === 0) {
+          if (index % 5 === 0) {
             slider = document.createElement("div");
             slider.className = "slid-container d-flex overflow-auto gap-2 p-1 mb-3";
             cards_wrapper.appendChild(slider);
@@ -451,6 +393,7 @@
     });
 
   </script>
+
 </body>
 
 </html>
