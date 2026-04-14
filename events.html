@@ -89,13 +89,13 @@
       <div id="filter_options" class="d-none text-center" style="border: solid 2px black;">
 
         <div class="mb-3">
-          <label class="form-label">التاريخ (من - إلى)</label>
-          <input type="date" id="date_to" class="form-control">
+          <label for="date_from" class="form-label">التاريخ (من - إلى)</label>
           <input type="date" id="date_from" class="form-control mb-2">
+          <input type="date" id="date_to" class="form-control">
         </div>
 
         <div class="mb-3">
-          <label class="form-label">المكان</label>
+          <label for="place_filter" class="form-label">المكان</label>
           <select id="place_filter" class="form-select">
             <option value="all">الكل</option>
             <option value="دمشق">دمشق</option>
@@ -114,7 +114,7 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label">النوع</label>
+          <label for="type_filter" class="form-label">النوع</label>
           <select id="type_filter" class="form-select">
             <option value="all">الكل</option>
             <option value="sport">رياضة</option>
@@ -133,7 +133,8 @@
 
       <section class="slid-container d-flex overflow-auto p-1 my-3">
 
-        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family cultural">
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+          data-category="family cultural">
           <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">family</h5>
@@ -224,7 +225,8 @@
           </div>
         </div>
 
-        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural sport family">
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+          data-category="cultural sport family">
           <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">cultural</h5>
