@@ -16,6 +16,10 @@
   <title>Eventify</title>
 
   <style>
+    .card img {
+      object-fit: cover !important;
+      height: auto !important;
+    }
     .event-details {
       display: none;
     }
@@ -25,25 +29,25 @@
     }
 
     .event-thumb {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--bs-primary);
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100px !important;
+      height: 100px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      border: 3px solid var(--bs-primary) !important;
+      cursor: pointer !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     }
 
     .event-thumb:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+      transform: scale(1.1) !important;
+      box-shadow: 0 0 10px rgba(13, 110, 253, 0.4) !important;
     }
 
     
     .modal-content img {
-      border-radius: 10px;
-      max-height: 80vh;
-      object-fit: contain;
+      border-radius: 10px !important;
+      max-height: 80vh !important;
+      object-fit: contain !important;
     }
 
   </style>
